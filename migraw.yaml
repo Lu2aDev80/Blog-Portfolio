@@ -1,0 +1,10 @@
+name: migraw.default
+document_root: public
+network:
+  ip: 127.0.0.1
+  host: migraw.default.com
+config:
+  php: 8.1
+  apache: true
+  mysql: true
+  mailhog: true
