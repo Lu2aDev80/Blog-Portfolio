@@ -11,5 +11,12 @@ Route::get('URL', function () {
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('posts', [
+
+    ]);
+});
+Route::get('posts/{post}', function ($id) {
+   return view('post', [
+        'post' => Post::findOrFail($id)
+   ]);
 });
