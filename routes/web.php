@@ -11,13 +11,5 @@ Route::get('URL', function () {
 */
 
 Route::get('/', function () {
-    return view('posts', [
-        'posts' => Post::all(),
-    ]);
+    return view('home');
 });
-
-Route::get('posts/{post}', function ($slug) {
-    return view('post', [
-        'post' => Post::find($slug),
-    ]);
-})->where('post', '[A-z_\-]+');
