@@ -12,7 +12,7 @@ Route::get('URL', function () {
 
 Route::get('/', function () {
     return view('posts', [
-
+        'posts' => Post::all()
     ]);
 });
 Route::get('posts/{post}', function ($id) {
