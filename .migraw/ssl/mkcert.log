@@ -1,0 +1,9 @@
+
+Created a new certificate valid for the following names 📜
+ - "127.0.0.1"
+ - "migraw.default.com"
+
+The certificate is at "/home/field/blog/.migraw/ssl/host.pem" and the key at "/home/field/blog/.migraw/ssl/host-key.pem" ✅
+
+It will expire on 12 March 2026 🗓
+

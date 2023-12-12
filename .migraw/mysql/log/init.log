@@ -1,0 +1,47 @@
+chown: changing ownership of '/home/field/migraw/migraw-data/bin/usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool': Operation not permitted
+Couldn't set an owner to '/home/field/migraw/migraw-data/bin/usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool'.
+It must be root, the PAM authentication plugin doesn't work otherwise..
+
+Installing MariaDB/MySQL system tables in '/home/field/blog/.migraw/mysql/data' ...
+OK
+
+To start mariadbd at boot time you have to copy
+support-files/mariadb.service to the right place for your system
+
+
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+To do so, start the server, then issue the following command:
+
+'/home/field/migraw/migraw-data/bin/usr/bin/mariadb-secure-installation'
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the MariaDB Knowledgebase at https://mariadb.com/kb
+
+You can start the MariaDB daemon with:
+cd '/home/field/migraw/migraw-data/bin/usr' ; /home/field/migraw/migraw-data/bin/usr/bin/mariadb-safe --datadir='/home/field/blog/.migraw/mysql/data'
+
+You can test the MariaDB daemon with mysql-test-run.pl
+cd '/home/field/migraw/migraw-data/bin/usr/share/mysql/mysql-test' ; perl mariadb-test-run.pl
+
+Please report any problems at https://mariadb.org/jira
+
+The latest information about MariaDB is available at https://mariadb.org/.
+
+Consider joining MariaDB's strong and vibrant community:
+https://mariadb.org/get-involved/
+
+231107 09:15:50 mysqld_safe Logging to '/home/field/blog/.migraw/mysql/log/log.err'.
+231107 09:15:50 mysqld_safe Starting mariadbd daemon with databases from /home/field/blog/.migraw/mysql/data
+231107 09:16:04 mysqld_safe Logging to '/home/field/blog/.migraw/mysql/log/log.err'.
+231107 09:16:04 mysqld_safe A mysqld process already exists
+231114 10:41:19 mysqld_safe Logging to '/home/field/blog/.migraw/mysql/log/log.err'.
+231114 10:41:19 mysqld_safe Starting mariadbd daemon with databases from /home/field/blog/.migraw/mysql/data
+231114 12:04:14 mysqld_safe Logging to '/home/field/blog/.migraw/mysql/log/log.err'.
+231114 12:04:14 mysqld_safe Starting mariadbd daemon with databases from /home/field/blog/.migraw/mysql/data
+231205 08:37:02 mysqld_safe Logging to '/home/field/blog/.migraw/mysql/log/log.err'.
+231205 08:37:02 mysqld_safe Starting mariadbd daemon with databases from /home/field/blog/.migraw/mysql/data
+231212 08:50:38 mysqld_safe Logging to '/home/field/blog/.migraw/mysql/log/log.err'.
+231212 08:50:38 mysqld_safe Starting mariadbd daemon with databases from /home/field/blog/.migraw/mysql/data
