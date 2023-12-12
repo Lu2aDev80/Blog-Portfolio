@@ -1,2 +1,0 @@
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'tester', 'tester@example.com', '1234', 0, NULL, NULL, NULL);
