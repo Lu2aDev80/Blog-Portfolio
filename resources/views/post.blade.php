@@ -3,6 +3,10 @@
         {{ $post->title }}
     </h1>
 
+    <p>
+        <a href="#">{{ $post->category->name }}</a> //fix this
+    </p>
+
     <div>
         {{ $post->body }}
     </div>
