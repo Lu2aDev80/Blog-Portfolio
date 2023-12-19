@@ -5,7 +5,7 @@
                 <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl">
 
                 <p class="mt-4 block text-gray-400 text-xs">
-                    Published
+                    Hochgeladen am
                     <time>{{ $post->created_at->diffForHumans() }}</time>
                 </p>
 
@@ -33,7 +33,7 @@
                             </g>
                         </svg>
 
-                        Back to Posts
+                        Zurück
                     </a>
 
                     <div class="space-x-2">

@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>Laravel From Scratch Blog</title>
+<title>My Photograpy Blog</title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
                     <x-dropdown>
                         <x-slot name="trigger">
                             <button class="text-xs font-bold uppercase">
-                                Welcome, {{ auth()->user()->name }}!
+                                Hallo, {{ auth()->user()->name }}!
                             </button>
                         </x-slot>
 
@@ -52,7 +52,7 @@
                                 href="/admin/posts/create"
                                 :active="request()->is('admin/posts/create')"
                             >
-                                New Post
+                                Neuer Eintrag
                             </x-dropdown-item>
                         @endadmin
 
@@ -61,7 +61,7 @@
                             x-data="{}"
                             @click.prevent="document.querySelector('#logout-form').submit()"
                         >
-                            Log Out
+                            Ausloggen
                         </x-dropdown-item>
 
                         <form id="logout-form" method="POST" action="/logout" class="hidden">
@@ -71,18 +71,18 @@
                 @else
                     <a href="/register"
                        class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
-                        Register
+                        Registrieren
                     </a>
 
                     <a href="/login"
                        class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
-                        Log In
+                        Anmelden
                     </a>
                 @endauth
 
                 <a href="#newsletter"
                    class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                    Subscribe for Updates
+                    Newsletter
                 </a>
             </div>
         </nav>
@@ -94,8 +94,7 @@
         >
             <img src="/public/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
 
-            <h5 class="text-3xl">Stay in touch with the latest posts</h5>
-            <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
+            <h5 class="text-3xl">Aboniere hier unseren Newsletter</h5>
 
             <div class="mt-10">
                 <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
@@ -124,7 +123,7 @@
                         <button type="submit"
                                 class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8"
                         >
-                            Subscribe
+                            Abonieren
                         </button>
                     </form>
                 </div>
