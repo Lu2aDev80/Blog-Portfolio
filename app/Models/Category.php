@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
-
-
-//https://laracasts.com/series/laravel-8-from-scratch/episodes/24
-//EPS 24 07:50 min
-
