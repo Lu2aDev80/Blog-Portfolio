@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::GET('/', [PostController::class, 'index'])->name('home');
 
-Route::GET('/test', [PostController::class, 'test'])->name('test');
-
 Route::GET('posts/{post:slug}', [PostController::class, 'show']);
 Route::POST('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
 

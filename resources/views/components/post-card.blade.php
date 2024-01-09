@@ -4,9 +4,9 @@
     {{ $attributes->merge(['class' => 'transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-6 px-5 h-full flex flex-col">
         <div>
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog Post illustration" class="rounded-xl">
+            test
+            <img src="{{ asset('' . $post->thumbnail) }}" alt="Blog Post illustration" class="rounded-xl">
         </div>
-
         <div class="mt-6 flex flex-col justify-between flex-1">
             <header>
                 <div class="space-x-2">
