@@ -27,7 +27,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/public/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
                 </a>
             </div>
 
@@ -92,7 +92,7 @@
         <footer id="newsletter"
                 class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16"
         >
-            <img src="/public/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
+            <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
 
             <h5 class="text-3xl">Aboniere hier unseren Newsletter</h5>
 
@@ -104,7 +104,7 @@
 
                         <div class="lg:py-3 lg:px-5 flex items-center">
                             <label for="email" class="hidden lg:inline-block">
-                                <img src="/public/images/mailbox-icon.svg" alt="mailbox letter">
+                                <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
 
                             <div>

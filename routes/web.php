@@ -8,20 +8,22 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PostController::class, 'index'])->name('home');
+Route::GET('/', [PostController::class, 'index'])->name('home');
 
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
-Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
+Route::GET('/test', [PostController::class, 'test'])->name('test');
 
-Route::post('newsletter', NewsletterController::class);
+Route::GET('posts/{post:slug}', [PostController::class, 'show']);
+Route::POST('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
 
-Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
-Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
+Route::POST('newsletter', NewsletterController::class);
 
-Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
-Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
+Route::GET('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::POST('register', [RegisterController::class, 'store'])->middleware('guest');
 
-Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
+Route::GET('login', [SessionsController::class, 'create'])->middleware('guest');
+Route::POST('login', [SessionsController::class, 'store'])->middleware('guest');
+
+Route::POST('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 // Admin Section
 // Route::middleware('can:admin')->group(function () {

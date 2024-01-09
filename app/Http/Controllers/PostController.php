@@ -16,6 +16,15 @@ class PostController extends Controller
         ]);
     }
 
+    public function test()
+    {
+        return view('posts.test', [
+            'posts' => Post::latest()->filter(
+                request(['search', 'category', 'author'])
+            )->paginate(18)->withQueryString()
+        ]);
+    }
+
     public function show(Post $post)
     {
         return view('posts.show', [

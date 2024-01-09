@@ -31,3 +31,53 @@
 
     <button>Update</button>
 </form>
+
+
+
+<?php
+/*$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+//Dateityp kontrollieren
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tpm_name"]);
+    if ($check !== false) {
+        echo "Datei ist ein Bild - " . $check["mine"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "Datei ist kein Bild!";
+        $uploadOk = 0;
+    }
+}
+
+// überprüfen ob bereits vorhanden
+if (file_exists($target_file)) {
+    echo "Dieses Bild existiert bereits!";
+    $uploadOk = 0;
+}
+
+// Dateigröße überprüfen
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Datei zu groß!";
+    $uploadOk = 0;
+}
+
+// unterschiedliche dateitypen erlauben
+if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+    echo "Bitte nur JPG, JPEG, PNG & GIF verwenden.";
+    $uploadOk = 0;
+}
+
+// $uploadeOk überprüfen
+if ($uploadOk == 0) {
+    echo "Entschuldigung, aber dein Bild konnte nicht hochgeladen werden.";
+} else {
+    //wenn alles ok hochladen
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "Das Bild wurde erfolgreich hochgeladen!";
+    } else {
+        echo "error, das Bild konnte nicht hochgladen werden.";
+    }
+}*/

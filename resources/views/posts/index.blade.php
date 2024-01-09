@@ -9,5 +9,7 @@
         @else
             <p class="text-center">Noch nichts da. Schau später noch einmal nach.</p>
         @endif
+
+        <a href="/test"><button>Zur Test Seite</button></a>
     </main>
 </x-layout>
