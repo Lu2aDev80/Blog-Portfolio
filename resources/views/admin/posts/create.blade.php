@@ -5,10 +5,11 @@
 
             <x-form.input name="title" required />
             <x-form.input name="slug" required />
-            <x-form.input name="thumbnail" type="file" required />
+            <x-form.input name="thumbnail" type="file" id="thumbnail" required />
             <x-form.textarea name="excerpt" required />
             <x-form.textarea name="body" required />
 
+            <label for="thumbnail">Datei Hochladen</label>
             <x-form.field>
                 <x-form.label name="category"/>
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Post;
 use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
 
 class AdminPostController extends Controller
 {
@@ -22,9 +24,10 @@ class AdminPostController extends Controller
     public function store()
     {
         Post::create(array_merge($this->validatePost(), [
-            'user_id' => 1, //request()->user()->id,
+            'user_id' => request()->user()->id,
             'thumbnail' => request()->file('thumbnail')->store('thumbnails')
         ]));
+
 
         return redirect('/');
     }
@@ -40,6 +43,15 @@ class AdminPostController extends Controller
 
         if ($attributes['thumbnail'] ?? false) {
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        }
+        if (request()->file("images")){
+            foreach( request()->file('images') as $imagefile) {
+                $image = new Image;
+                $path = $imagefile->store('/images/resource', ['disk' =>   'my_files']);
+                $image->url = $path;
+                $image->post_id = $post->id;
+                $image->save();
+        }
         }
 
         $post->update($attributes);
@@ -67,4 +79,21 @@ class AdminPostController extends Controller
             'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
     }
+    public function addProduct(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:855',
+        ]);
+        $product = new Product;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->save();
+        foreach ($request->file('images') as $imagefile) {
+            $image = new Image;
+            $path = $imagefile->store('/images/resource', ['disk' =>   'my_files']);
+            $image->url = $path;
+            $image->product_id = $product->id;
+            $image->save();
+        }}
 }

@@ -27,41 +27,44 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                    <img src="/images/logo.svg" alt="Laracasts Logo" width="105" height="10">
                 </a>
             </div>
 
             <div class="mt-8 md:mt-0 flex items-center">
                 @auth
+                    <div id="profile">
+
+                    </div>
                     <x-dropdown>
                         <x-slot name="trigger">
-                            <button class="text-xs font-bold uppercase">
-                                Hallo, {{ auth()->user()->name }}!
+                            <button>
+                                    <img width="35" height="35" src="https://img.icons8.com/windows/64/user.png" alt="user" />
                             </button>
                         </x-slot>
 
                         @admin
-                            <x-dropdown-item
-                                href="/admin/posts"
-                                :active="request()->is('admin/posts')"
-                            >
-                                Dashboard
-                            </x-dropdown-item>
+                        <x-slot name="trigger">
+                            <button>
+                                <img width="25" height="25" src="https://img.icons8.com/ios/50/admin-settings-male.png" alt="admin-settings-male" />
+                            </button>
+                        </x-slot>
 
-                            <x-dropdown-item
-                                href="/admin/posts/create"
-                                :active="request()->is('admin/posts/create')"
-                            >
-                                Neuer Eintrag
-                            </x-dropdown-item>
                         @endadmin
+
 
                         <x-dropdown-item
                             href="#"
                             x-data="{}"
                             @click.prevent="document.querySelector('#logout-form').submit()"
                         >
-                            Ausloggen
+                            <img width="50" height="50" src="https://img.icons8.com/ios/50/logout-rounded--v1.png" alt="logout-rounded--v1"/>
+                        </x-dropdown-item>
+
+                        <x-dropdown-item
+                            href="profile"
+                        >
+                            <img width="50" height="50" src="https://img.icons8.com/ios/50/settings--v1.png" alt="settings--v1" class="mt-2"/>
                         </x-dropdown-item>
 
                         <form id="logout-form" method="POST" action="/logout" class="hidden">
@@ -78,12 +81,14 @@
                        class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
                         Anmelden
                     </a>
+
+                    <a href="#newsletter"
+                       class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                        Newsletter
+                    </a>
                 @endauth
 
-                <a href="#newsletter"
-                   class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                    Newsletter
-                </a>
+
             </div>
         </nav>
 
