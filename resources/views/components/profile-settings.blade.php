@@ -18,8 +18,6 @@
                     >
                         <img width="20" height="20" src="https://img.icons8.com/ios/50/logout-rounded--v1.png" alt="logout-rounded--v1" class="cursor-pointer"/>
                     </div>
-
-
                 </li>
 
 

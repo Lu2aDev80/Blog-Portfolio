@@ -9,7 +9,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 Route::GET('/', [PostController::class, 'index'])->name('home');
 
@@ -29,9 +28,10 @@ Route::POST('login', [SessionsController::class, 'store'])->middleware('guest');
 Route::POST('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 // Admin Section
-Route::middleware('can:admin')->group(function () {
     Route::resource('admin/posts', AdminPostController::class)->except('show');
-});
+
+
+
 
 Route::get('/img/{path}', [ImageController::class,'show'])->where('path', '.*');
 

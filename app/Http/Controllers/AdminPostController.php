@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 
@@ -47,7 +48,8 @@ class AdminPostController extends Controller
         if (request()->file("images")){
             foreach( request()->file('images') as $imagefile) {
                 $image = new Image;
-                $path = $imagefile->store('/images/resource', ['disk' =>   'my_files']);
+                // $path = $imagefile->store('/images/resource', ['disk' =>   'my_files']);
+                $path = Storage::putFile("/images/resource", $imagefile);
                 $image->url = $path;
                 $image->post_id = $post->id;
                 $image->save();
@@ -91,7 +93,8 @@ class AdminPostController extends Controller
         $product->save();
         foreach ($request->file('images') as $imagefile) {
             $image = new Image;
-            $path = $imagefile->store('/images/resource', ['disk' =>   'my_files']);
+            // $path = $imagefile->store('/../storage/app/images/resource', ['disk' =>   'my_files']);
+            $path = Storage::putFile("/images/resource", $imagefile);
             $image->url = $path;
             $image->product_id = $product->id;
             $image->save();

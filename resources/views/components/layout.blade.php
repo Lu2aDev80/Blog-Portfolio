@@ -43,14 +43,7 @@
                             </button>
                         </x-slot>
 
-                        @admin
-                        <x-slot name="trigger">
-                            <button>
-                                <img width="25" height="25" src="https://img.icons8.com/ios/50/admin-settings-male.png" alt="admin-settings-male" />
-                            </button>
-                        </x-slot>
 
-                        @endadmin
 
 
                         <x-dropdown-item

@@ -50,9 +50,9 @@
             </div>
 
             @foreach ($post->images as $image)
-                <div>
-                    <img src="/{{ $image->url }}?w=1000" alt="Blog Post illustration" class="rounded-xl">
-                </div>
+
+                    <img src="/img/{{ $image->url }}?w=120" alt="Blog Post illustration" class="rounded-xl">
+
             @endforeach
 
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
